@@ -1,0 +1,34 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class TestAutenticador {
+
+	@Test
+	public void loginComSucesso() throws LoginException {
+		Autenticador a = new Autenticador();
+		Usuario u = a.logar("davijose", "araujo");
+		assertEquals("davijose",u.getLogin());
+	}
+	
+	@Test(expected= LoginException.class)
+	public void loginFalho() throws LoginException {
+		Autenticador a = new Autenticador();
+		Usuario u = a.logar("davi", "araujo");
+		assertEquals("davijose",u.getLogin());
+	}
+	
+	@Test(expected= LoginException.class)
+	public void senhaFalha() throws LoginException {
+		Autenticador a = new Autenticador();
+		Usuario u = a.logar("davijose", "araujos");
+		assertEquals("davijose",u.getLogin());
+	}
+	
+	@Test
+	public void senhaFalha() throws LoginException {
+		Autenticador a = new Autenticador();
+		Usuario u = a.logar("davijose", "araujos");
+		assertEquals("davijose",u.getLogin());
+	}
+
+}

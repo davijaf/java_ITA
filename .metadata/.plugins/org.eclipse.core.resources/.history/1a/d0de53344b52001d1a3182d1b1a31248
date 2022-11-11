@@ -1,0 +1,18 @@
+import static org.junit.Assert.*;
+import java.text.ParseException;
+
+import org.junit.Test;
+
+public class teste {
+
+	@Test
+	public void test() throws ParseException {
+		Pessoa p1 = new Pessoa();
+		p1.setNome("Davi José");
+		p1.setDataDeNascimento("17/12/1986");
+		String signo = p1.getSigno();
+		int idade = p1.getDataDeNascimento(null);
+		
+	}
+
+}

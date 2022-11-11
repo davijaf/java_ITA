@@ -1,0 +1,36 @@
+package Pizzaria;
+
+public class Main {
+    public static void main(String[] args) {
+        Pizza pizza01 = new Pizza();
+        Pizza pizza02 = new Pizza();
+        Pizza pizza03 = new Pizza();
+
+        pizza01.adicionaIngrediente("Muzzarela");
+        pizza01.adicionaIngrediente("Alho");
+
+
+        pizza02.adicionaIngrediente("Queijo");
+        pizza02.adicionaIngrediente("Cebola");
+        pizza02.adicionaIngrediente("Alecrim");
+
+        pizza03.adicionaIngrediente("Catupiry");
+        pizza03.adicionaIngrediente("Calabresa");
+        pizza03.adicionaIngrediente("Chocolate");
+        pizza03.adicionaIngrediente("Amendoin");
+        pizza03.adicionaIngrediente("Frango");
+        pizza03.adicionaIngrediente("Marguerita");
+
+
+
+        CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
+        carrinhoDeCompras.novaPizza(pizza01);
+        carrinhoDeCompras.novaPizza(pizza02);
+        carrinhoDeCompras.novaPizza(pizza03);
+
+        System.out.println("Número de pizzas no carrinho: "+carrinhoDeCompras.totalDePizzas());
+        System.out.println("Valor total: "+carrinhoDeCompras.getPrecoTotal());
+        System.out.println("Ingredientes usados nas Pizzas: "+Pizza.getListaIngredientes());
+
+    }
+}

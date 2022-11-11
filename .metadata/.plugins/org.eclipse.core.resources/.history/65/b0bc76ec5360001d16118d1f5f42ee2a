@@ -1,0 +1,26 @@
+
+public class Pilha {
+	
+	private Object elemento;
+
+	public boolean estaVazia() {
+		return true;
+	}
+
+	public int tamanho() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void empilha(Object elemento) {
+		this.elemento = elemento;
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object topo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

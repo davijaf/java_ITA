@@ -1,0 +1,111 @@
+import static org.junit.Assert.*;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class TestCamelCase {
+	
+	CamelCase = new CamelCase();
+	
+	@Test
+	public void listaVazia() {
+		assertEquals(0,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString01Original() {
+		CamelCase.converterCamelCase("nome");
+		assertEquals("nome",CamelCase.getStrings().get(0));
+		assertEquals(1,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString02Convertida() {
+		CamelCase.converterCamelCase("Nome");
+		assertEquals("nome",CamelCase.getStrings().get(1));
+		assertEquals(2,CamelCase.tamanhoDaLista());
+	}
+	
+	
+	@Test
+	public void retornarString03NomeComposto() {
+		CamelCase.converterCamelCase("NomeComposto");
+		assertEquals("nome",CamelCase.getStrings().get(2));
+		assertEquals("composto",CamelCase.getStrings().get(3));
+		assertEquals(4,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString04NomeUpper() {
+		CamelCase.converterCamelCase("CPF");
+		assertEquals("CPF",CamelCase.getStrings().get(4));
+		assertEquals(5,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString05NomeCompostoUpper() {
+		CamelCase.converterCamelCase("numeroCPF");
+		assertEquals("numero",CamelCase.getStrings().get(5));
+		assertEquals("CPF",CamelCase.getStrings().get(6));
+		assertEquals(7,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString06NomeCompostoMisto() {
+		CamelCase.converterCamelCase("numeroCPFContribuinte");
+		assertEquals("numero",CamelCase.getStrings().get(7));
+		assertEquals("CPF",CamelCase.getStrings().get(8));
+		assertEquals("contribuinte",CamelCase.getStrings().get(9));
+		assertEquals(10,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString07NomeCompostoNumeral() {
+		CamelCase.converterCamelCase("recupera10Primeiros");
+		assertEquals("recupera",CamelCase.getStrings().get(10));
+		assertEquals("10",CamelCase.getStrings().get(11));
+		assertEquals("primeiros",CamelCase.getStrings().get(12));
+		assertEquals(13,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test(expected=InicioNumerosException.class)
+	public void retornarString08NomeCompostoNumeral() {
+		CamelCase.converterCamelCase("10Primeiros");
+		assertEquals(13,CamelCase.tamanhoDaLista());
+	}
+	
+	
+	@Test(expected=CaractereEspecialException.class)
+	public void retornarString09NomeComCaractereEspecial() {
+		CamelCase.converterCamelCase("nome#Composto");
+		assertEquals(13,CamelCase.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString10NomeCompostoNumeral() {
+		try {
+			CamelCase.converterCamelCase("10Primeiros");
+			fail();
+		} catch (InicioNumerosException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	public void retornarString11NomeComCaractereEspecial() {
+		try {
+			CamelCase.converterCamelCase("nome#Composto");
+			fail();
+		} catch (CaractereEspecialException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	
+	
+
+}

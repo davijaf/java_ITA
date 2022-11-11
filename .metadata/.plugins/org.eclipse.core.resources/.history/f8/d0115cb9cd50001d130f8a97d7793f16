@@ -1,0 +1,65 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class Date {
+
+    public static void main(String[] args) throws ParseException {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
+        java.util.Date date1 = sdf.parse("30/01");
+        java.util.Date aries = sdf.parse("21/03");
+        java.util.Date touro = sdf.parse("21/04");
+        java.util.Date gemeos = sdf.parse("21/05");
+        java.util.Date cancer = sdf.parse("21/06");
+        java.util.Date leao = sdf.parse("22/07");
+        java.util.Date virgem = sdf.parse("23/08");
+        java.util.Date libra = sdf.parse("23/09");
+        java.util.Date escorpiao = sdf.parse("23/10");
+        java.util.Date sagitario = sdf.parse("22/11");
+        java.util.Date capricornio = sdf.parse("22/12");
+        java.util.Date aquario = sdf.parse("21/01");
+        java.util.Date peixes = sdf.parse("20/02");
+        
+        System.out.println("date1 : " + sdf.format(date1));
+        System.out.println("date2 : " + sdf.format(date2));
+        System.out.println(sdf.parse("31/01"));
+        int result = date1.compareTo(date2);
+        System.out.println("result: " + result);
+        
+        if (date1.after(capricornio) && date1.before(aquario)) {
+            System.out.println("capricornio");
+        }
+        if (date1.after(aquario) && date1.before(peixes)) {
+            System.out.println("aquario");
+        }
+        if (date1.after(aries) && date1.before(touro)) {
+            System.out.println("Aries");
+        }
+        if (date1.after(touro) && date1.before(gemeos)) {
+            System.out.println("Touro");
+        }
+        if (date1.after(gemeos) && date1.before(cancer)) {
+            System.out.println("Gemeos");
+        }
+        if (date1.after(cancer) && date1.before(leao)) {
+            System.out.println("cancer");
+        }
+        if (date1.after(leao) && date1.before(virgem)) {
+            System.out.println("leao");
+        }
+        if (date1.after(virgem) && date1.before(libra)) {
+            System.out.println("virgem");
+        }
+        if (date1.after(libra) && date1.before(escorpiao)) {
+            System.out.println("libra");
+        }
+        if (date1.after(escorpiao) && date1.before(sagitario)) {
+            System.out.println("escorpiao");
+        }
+        if (date1.after(sagitario)){
+            System.out.println("sagitario");
+        }
+
+
+    }
+}

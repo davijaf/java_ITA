@@ -1,0 +1,10 @@
+import java.time.LocalDate;
+
+public class Idade {
+
+	public static void main(String[] args) {
+		String strDate = "1986-12-17";
+		LocalDate dataDeNascimento =  LocalDate.parse(strDate);
+		
+    }
+}

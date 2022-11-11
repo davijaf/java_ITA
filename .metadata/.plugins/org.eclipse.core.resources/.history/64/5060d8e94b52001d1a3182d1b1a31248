@@ -1,0 +1,21 @@
+import static org.junit.Assert.*;
+import java.text.ParseException;
+
+import org.junit.Test;
+
+public class teste {
+
+	@Test
+	public void test() throws ParseException {
+		Pessoa p1 = new Pessoa();
+		p1.setNome("Davi José");
+		p1.setDataDeNascimento("17/12/1986");
+		String nome = p1.getNome();
+		String signo = p1.getSigno();
+		int idade = (int) p1.getIdade(null);
+		assertEquals(35, idade);
+		assertEquals("Sagitário", signo);
+		System.out.println(nome+" é de "+signo+" e tem "+idade+" anos");		
+	}
+
+}

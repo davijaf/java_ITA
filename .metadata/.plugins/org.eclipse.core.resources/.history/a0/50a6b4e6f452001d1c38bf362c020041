@@ -1,0 +1,8 @@
+
+public class Embaralhador {
+
+	String valor = "palavra";
+    for(char c : valor.toCharArray()){
+           System.out.println("Char: "+c);
+    }
+}

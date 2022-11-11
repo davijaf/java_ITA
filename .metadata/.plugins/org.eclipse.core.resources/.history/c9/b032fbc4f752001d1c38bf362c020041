@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Embaralhador {
+
+String palavra = "palavra";
+private javax.swing.JTextField jTextFieldNumeros;
+
+	public Embaralhador(String palavra) {
+		super();
+		this.palavra = palavra;
+	    }
+	public void embaralha() {
+		jTextFieldNumeros = new javax.swing.JTextField();
+		String[] silabas = jTextFieldNumeros.getText().split(",");
+		List<String> silabasString = new ArrayList<String>();
+	    for (int i = 0; i < silabasString.length; i++) {
+		Collections.shuffle(silabasString);
+		}
+	}

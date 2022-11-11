@@ -1,0 +1,78 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.MonthDay;
+import java.time.temporal.ChronoUnit;
+
+public class Pessoa {
+	
+	private int idade;
+	private String signo;
+	private LocalDate dataDeNascimento;
+	
+	public Pessoa(LocalDate dataDeNascimento) {
+		 this.idade = (int) (dataDeNascimento).until(LocalDate.now(), ChronoUnit.YEARS);
+		 this.dataDeNascimento = dataDeNascimento;
+	}
+
+	public int getIdade() {
+		return this.idade;
+	}
+
+	public String getSigno() {
+		
+		MonthDay aniversario = MonthDay.of(dataDeNascimento.getMonth(), dataDeNascimento.getDayOfMonth());
+		
+		MonthDay janeiroAfter = MonthDay.of(Month.JANUARY, 21);
+		MonthDay fevereiroAfter = MonthDay.of(Month.FEBRUARY, 20);
+		MonthDay marcoAfter = MonthDay.of(Month.MARCH, 21);
+		MonthDay abrilAfter = MonthDay.of(Month.APRIL, 21);
+		MonthDay maioAfter = MonthDay.of(Month.MAY, 21);
+		MonthDay junhoAfter = MonthDay.of(Month.JUNE, 21);
+		MonthDay julhoAfter = MonthDay.of(Month.JULY, 22);
+		MonthDay agostoAfter = MonthDay.of(Month.AUGUST, 23);
+		MonthDay setembroAfter = MonthDay.of(Month.SEPTEMBER, 23);
+		MonthDay outubroAfter = MonthDay.of(Month.OCTOBER, 23);
+		MonthDay novembroAfter = MonthDay.of(Month.NOVEMBER, 22);
+		MonthDay dezembroAfter = MonthDay.of(Month.DECEMBER, 22);
+		
+		MonthDay janeiroBefore = MonthDay.of(Month.JANUARY, 20);
+		MonthDay fevereiroBefore = MonthDay.of(Month.FEBRUARY, 20);
+		MonthDay marcoBefore = MonthDay.of(Month.MARCH, 21);
+		MonthDay abrilBefore = MonthDay.of(Month.APRIL, 21);
+		MonthDay maioBefore = MonthDay.of(Month.MAY, 21);
+		MonthDay junhoBefore = MonthDay.of(Month.JUNE, 21);
+		MonthDay julhoBefore = MonthDay.of(Month.JULY, 22);
+		MonthDay agostoBefore = MonthDay.of(Month.AUGUST, 23);
+		MonthDay setembroBefore = MonthDay.of(Month.SEPTEMBER, 23);
+		MonthDay outubroBefore = MonthDay.of(Month.OCTOBER, 23);
+		MonthDay novembroBefore = MonthDay.of(Month.NOVEMBER, 23);
+		MonthDay dezembroBefore = MonthDay.of(Month.DECEMBER, 22);
+		
+		if (aniversario.isAfter(janeiroAfter) && aniversario.isBefore(fevereiroBefore)) {
+			 signo = "Aqu�rio";
+		 } else if (aniversario.isAfter(fevereiroAfter) && aniversario.isBefore(marcoBefore)) {
+			 signo = "Peixes";
+		 } else if (aniversario.isAfter(marcoAfter) && aniversario.isBefore(abrilBefore)){
+			signo = "�ries";
+		 } else if (aniversario.isAfter(abrilAfter) && aniversario.isBefore(maioBefore)) {
+			 signo = "Touro";
+		 } else if (aniversario.isAfter(maioAfter) && aniversario.isBefore(junhoBefore)) {
+			 signo = "G�meos";
+		 } else if (aniversario.isAfter(junhoAfter) && aniversario.isBefore(julhoBefore)) {
+			 signo = "C�ncer";
+		 } else if (aniversario.isAfter(julhoAfter) && aniversario.isBefore(agostoBefore)) {
+			 signo = "Le�o";
+		 } else if (aniversario.isAfter(agostoAfter) && aniversario.isBefore(setembroBefore)) {
+			 signo = "Virgem";
+		 } else if (aniversario.isAfter(setembroAfter) && aniversario.isBefore(outubroBefore)) {
+			 signo = "Libra";
+		 } else if (aniversario.isAfter(outubroAfter) && aniversario.isBefore(novembroBefore)) {
+			 signo = "Escorpi�o";
+		 } else if (aniversario.isAfter(novembroAfter) && aniversario.isBefore(dezembroBefore)) {
+			 signo = "Sagit�rio";
+		 } else if (aniversario.isAfter(dezembroAfter) && aniversario.isBefore(janeiroBefore)) {
+			 signo = "Capric�rnio";
+		 }
+		return signo;
+	}
+}

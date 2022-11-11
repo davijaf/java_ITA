@@ -1,0 +1,3 @@
+module Pilha {
+	import static org.junit.*;
+}

@@ -1,0 +1,14 @@
+import java.text.ParseException;
+
+public class Principal {
+
+	public static void main(String[] args) throws ParseException {
+		Pessoa p1 = new Pessoa();
+		p1.setDataDeNascimento("17/12/1986");
+		p1.getIdade();
+		
+		
+
+	}
+
+}

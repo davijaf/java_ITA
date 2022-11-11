@@ -1,0 +1,21 @@
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
+public class Principal {
+	
+	public static void main(String[] args) {
+	       // setup
+		Relogio r = new Relogio();
+        LocalDate birthDate = LocalDate.of(1986, 12, 17);
+        LocalDate relogio = Instant.ofEpochMilli(r.agora()).atZone(ZoneId.of("UTC")).toLocalDate();;
+        // exercise
+        int actual = getIdade.calculateAge(birthDate, relogio);
+        //int actual = getIdade.calculateAge(birthDate, LocalDate.now());
+        // assert
+        System.out.println(actual);
+        System.out.println(r.agora());
+
+	}
+
+}

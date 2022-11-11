@@ -1,0 +1,9 @@
+
+public class Idade {
+
+	public static void main(String[] args) throws ParseException {
+		strDate = "1986-12-17"
+		LocalDate dataDeNascimento =  LocalDate.parse(strDate);
+		
+    }
+}

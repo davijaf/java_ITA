@@ -1,0 +1,8 @@
+
+public class Relogio {
+	
+	public void agora() {
+		return System.currentTimeMillis();
+	}
+
+}

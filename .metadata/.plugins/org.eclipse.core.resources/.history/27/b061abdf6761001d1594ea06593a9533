@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CamelCase2 {
+	
+	static List<String> strings = new ArrayList<String>(); 
+	
+	
+	public static List<String> getStrings() {
+		return strings;
+	}
+
+	public static List<String> converterCamelCase(String original) {
+		convertePalavra(original);
+		System.out.println(strings);
+		return strings;
+	}
+	
+	public int tamanhoDaLista() {
+		return strings.size();
+	}
+	
+	public static boolean caracterEMaisculo(char caractere) {
+		return Character.isUpperCase(caractere);		
+	}
+	
+	public static boolean caracterEMinisculo(char caractere) {
+		return Character.isLowerCase(caractere);		
+	}
+	
+	public static boolean caracterENumeral(char caractere) {
+		return Character.isDigit(caractere);		
+	}
+	
+	public static char converteCaracterParaMinusculo(char caractere) {
+		return Character.toLowerCase(caractere);		
+	}
+	
+	public static void convertePalavra(String entrada) {
+		String saida = "";
+		int tamanhoDaPalavra = entrada.length();
+		for (int i = 0; i < tamanhoDaPalavra; i++) {
+			char charCorrente = entrada.charAt(i);
+			saida += converteCaracterParaMinusculo(charCorrente);
+		}
+		strings.add(saida);
+	}	
+	
+	public static void separaPalavraComposta(String entrada) {
+		String saida = "";
+		int tamanhoDaPalavra = entrada.length();
+		for (int i = 0; i < tamanhoDaPalavra; i++) {
+			char charCorrente = entrada.charAt(i);
+			if(i>0 && caracterEMaisculo(charCorrente) && i < tamanhoDaPalavra-1) {
+				char charPosterior = entrada.charAt(i+1);
+				char charAnterior = entrada.charAt(i-1);
+				if(caracterEMaisculo(charPosterior)) {
+					if(caracterEMinisculo(charAnterior)) {
+						strings.add(saida);
+						saida = "";
+						saida += charCorrente;
+					}
+					else {
+						saida += charCorrente;
+					}
+				}
+				else {
+				strings.add(saida);
+				saida = "";
+				saida += charCorrente;
+				}
+			}
+			else if(i>0 && caracterENumeral(charCorrente)) {
+				char charAnterior = entrada.charAt(i-1);
+				if(caracterEMinisculo(charAnterior)) {
+				strings.add(saida);
+				saida = "";
+				saida += charCorrente;
+				}
+				else {
+					saida += charCorrente;
+				}
+			}
+			else
+				saida += charCorrente;	
+		}
+		strings.add(saida);
+		System.out.println(strings);
+	}
+}

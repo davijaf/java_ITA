@@ -1,0 +1,33 @@
+
+public class Embaralhador {
+
+String palavra = "palavras";
+
+	public Embaralhador(String palavra) {
+		super();
+		this.palavra = palavra;
+	    }
+	
+	public void embaralha1() {
+		char[] arrayPalavra = new char[palavra.length()];
+		
+		for (int i = 0; i < palavra.length(); i++) {
+			if(i%2==0 && i!=palavra.length()){	
+				arrayPalavra[i+1] = palavra.charAt(i);
+			}
+			else if(i%2==1 && i!=palavra.length()){	
+				arrayPalavra[i-1] = palavra.charAt(i);
+			}
+//			else if (i==palavra.length()){
+//				arrayPalavra[i-1] = palavra.charAt(i);
+//			}
+		}
+
+		for (char x : arrayPalavra) {
+		      System.out.println(x);
+		}
+		StringBuilder stringEmbaralhada = new StringBuilder();
+		stringEmbaralhada.append(arrayPalavra);
+		System.out.println(stringEmbaralhada);
+	}
+}

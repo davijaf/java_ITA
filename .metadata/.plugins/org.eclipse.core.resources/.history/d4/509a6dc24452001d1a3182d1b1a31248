@@ -1,0 +1,8 @@
+
+public class Relogio {
+	long tempoTeste = 1666467530707L; // refere-se à 22/10/2022
+	public long agora() {
+		return tempoTeste;
+	}
+
+}

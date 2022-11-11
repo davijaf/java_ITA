@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestCamelCase" project="CamelCase" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="TestCamelCase" time="0.004">
+    <testcase name="listaVazia" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString01Original" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString02Convertida" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString03NomeComposto" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString04NomeUpper" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString05NomeCompostoUpper" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString06NomeCompostoMisto" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString07NomeCompostoNumeral" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString08NomeCompostoNumeral" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString09NomeComCaractereEspecial" classname="TestCamelCase" time="0.0"/>
+    <testcase name="retornarString10NomeCompostoNumeral" classname="TestCamelCase" time="0.002"/>
+    <testcase name="retornarString11NomeComCaractereEspecial" classname="TestCamelCase" time="0.001"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,86 @@
+import static org.junit.Assert.*;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class TestCamelCase {
+	
+	CamelCase c = new CamelCase();
+	
+	@Test
+	public void listaVazia() {
+		assertEquals(0,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString01Original() {
+		c.converterCamelCase("nome");
+		assertEquals("nome",c.getStrings().get(0));
+		assertEquals(1,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString02Convertida() {
+		c.converterCamelCase("Nome");
+		assertEquals("nome",c.getStrings().get(1));
+		assertEquals(2,c.tamanhoDaLista());
+	}
+	
+	
+	@Test
+	public void retornarString03NomeComposto() {
+		c.converterCamelCase("NomeComposto");
+		assertEquals("nome",c.getStrings().get(2));
+		assertEquals("composto",c.getStrings().get(3));
+		assertEquals(4,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString04NomeUpper() {
+		c.converterCamelCase("CPF");
+		assertEquals("CPF",c.getStrings().get(4));
+		assertEquals(5,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString05NomeCompostoUpper() {
+		c.converterCamelCase("numeroCPF");
+		assertEquals("numero",c.getStrings().get(5));
+		assertEquals("CPF",c.getStrings().get(6));
+		assertEquals(7,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString06NomeCompostoMisto() {
+		c.converterCamelCase("numeroCPFContribuinte");
+		assertEquals("numero",c.getStrings().get(7));
+		assertEquals("CPF",c.getStrings().get(8));
+		assertEquals("contribuinte",c.getStrings().get(9));
+		assertEquals(10,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarString07NomeCompostoNumeral() {
+		c.converterCamelCase("recupera10Primeiros");
+		assertEquals("recupera",c.getStrings().get(10));
+		assertEquals("10",c.getStrings().get(11));
+		assertEquals("primeiros",c.getStrings().get(12));
+		assertEquals(13,c.tamanhoDaLista());
+	}
+	
+	@Test(expected=InicioNumerosException.class)
+	public void retornarString08NomeCompostoNumeral() {
+		c.converterCamelCase("10Primeiros");
+		assertEquals("10",c.getStrings().get(13));
+		assertEquals("primeiros",c.getStrings().get(14));
+		assertEquals(15,c.tamanhoDaLista());
+	}
+
+	
+	
+	
+
+}

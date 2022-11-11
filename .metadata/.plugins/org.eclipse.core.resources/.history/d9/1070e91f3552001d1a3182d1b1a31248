@@ -1,0 +1,16 @@
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class Date2 {
+
+	public static void main(String[] args) throws ParseException {
+
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		String dataRecebida = "23/11/2015"; 
+    	Date dataDeNascimento = (Date) formato.parse(dataRecebida);
+    	System.out.println(dataDeNascimento); 
+    	//int teste = dataDeNascimento - System.currentTimeMillis()
+		}
+}

@@ -1,0 +1,15 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+public class testeCarro {
+
+	@Test
+	public void testAcelerar() {
+		Carro c = new Carro();
+		c.potencia = 10;
+		c.acelerar();
+		assertEquals(10,c.getVelocidade());
+	}
+
+}

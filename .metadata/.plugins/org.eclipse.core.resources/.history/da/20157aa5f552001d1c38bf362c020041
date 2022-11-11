@@ -1,0 +1,15 @@
+
+public class Embaralhador {
+
+String valor = "palavra";
+
+	public Embaralhador(String valor) {
+		super();
+		this.valor = valor;
+	    }
+	public void embaralha() {
+		for(char c : valor.toCharArray()){
+			System.out.println(c);
+		}
+	}
+}

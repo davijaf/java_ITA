@@ -1,0 +1,9 @@
+
+public class Relogio {
+	
+	public long agora() {
+		int tempoTeste = 1666467530707;
+		return System.currentTimeMillis();
+	}
+
+}

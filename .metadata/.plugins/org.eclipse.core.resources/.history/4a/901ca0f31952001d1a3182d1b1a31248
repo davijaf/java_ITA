@@ -1,0 +1,16 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class Idade {
+
+	public void main(String[] args) throws ParseException {
+		Calendar dataDeNascimento = Calendar.getInstance();
+		Calendar diaDeHoje = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");                          
+	    int d1 = Integer.parseInt(sdf.format(dataDeNascimento.set(1986,12,17), null, null));                            
+	    int d2 = Integer.parseInt(sdf.format(diaDeHoje.getTime()));                          
+	    int idade = d2 - d1;
+	    System.out.println(idade);
+    }
+}

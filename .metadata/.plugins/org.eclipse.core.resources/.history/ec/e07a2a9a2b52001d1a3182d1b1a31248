@@ -1,0 +1,12 @@
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
+public class Relogio {
+	
+	public LocalDate agora() {
+		LocalDate relogio = Instant.ofEpochMilli(System.currentTimeMillis()).atZone(ZoneId.of("UTC")).toLocalDate();;
+		return relogio;
+	}
+
+}

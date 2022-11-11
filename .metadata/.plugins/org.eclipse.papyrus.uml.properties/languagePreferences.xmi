@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:lgpref="http://www.eclipse.org/papyrus/properties/uml/languagePreferences">
+  <lgpref:Preferences xmi:id="_lZqi8FhUEe2stvAG1YzKpA" defaultEditor="_lZrKAFhUEe2stvAG1YzKpA">
+    <editors xmi:type="lgpref:Editor" xmi:id="_lZrKAFhUEe2stvAG1YzKpA" class="org.eclipse.papyrus.uml.properties.widgets.NaturalLanguageEditor" bundleId="org.eclipse.papyrus.uml.properties"/>
+  </lgpref:Preferences>
+</xmi:XMI>

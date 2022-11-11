@@ -1,0 +1,79 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Pessoa {
+	
+	private Date dataDeNascimento;
+	private String nome;
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public Date getDataDeNascimento() {
+		return dataDeNascimento;
+	}
+
+	public void setDataDeNascimento(String dataInformadaPelaPessoa) throws ParseException {
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		this.dataDeNascimento = formato.parse(dataInformadaPelaPessoa);
+	}
+	
+	public long getIdade(String dataCalculoIdadeNoPassado) throws ParseException{
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		Date dateReferencia = null;
+    	long idade = 0;
+		Relogio dataParaTeste = new Relogio();
+
+    	if (dataCalculoIdadeNoPassado == null || dataCalculoIdadeNoPassado.isEmpty()) {
+    		idade = (dataParaTeste.agora() - dataDeNascimento.getTime())/24/60/60/1000/365;
+    	}
+    	else {
+    		dateReferencia = formato.parse(dataCalculoIdadeNoPassado);
+    		idade = (dateReferencia.getTime() - dataDeNascimento.getTime())/24/60/60/1000/365; }
+    	return idade;
+
+	}
+	
+	public String getSigno() throws ParseException {
+				
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
+		String strDate = sdf.format(dataDeNascimento);
+        String signo = null;
+        
+        java.util.Date date = sdf.parse(strDate);
+        
+        java.util.Date aquario = sdf.parse("21/01"); 	 // 21/01-19/02
+        java.util.Date peixes = sdf.parse("20/02");		 // 20/02-20/03
+        java.util.Date aries = sdf.parse("21/03");		 // 21/03-20/04
+        java.util.Date touro = sdf.parse("21/04");		 // 21/04-20/05
+        java.util.Date gemeos = sdf.parse("21/05");		 // 21/05-20/06
+        java.util.Date cancer = sdf.parse("21/06");		 // 21/06-21/07
+        java.util.Date leao = sdf.parse("22/07");		 // 22/07-22/08
+        java.util.Date virgem = sdf.parse("23/08");		 // 23/08-22/09
+        java.util.Date libra = sdf.parse("23/09");		 // 23/09-22/10
+        java.util.Date escorpiao = sdf.parse("23/10");   // 23/10-21/11
+        java.util.Date sagitario = sdf.parse("22/11");	 // 22/11-21/12
+        java.util.Date capricornio = sdf.parse("22/12"); // 22/12-20/01
+        
+        
+
+        if (date.equals(aquario) || date.after(aquario) && date.before(peixes)) {signo = "Aquário";}
+        else if (date.equals(aries) || date.after(aries) && date.before(touro)) {signo = "Áries";}
+        else if (date.equals(touro) || date.after(touro) && date.before(gemeos)) {signo = "Touro";}
+        else if (date.equals(gemeos) || date.after(gemeos) && date.before(cancer)) {signo = "Gêmeos";}
+        else if (date.equals(cancer) || date.after(cancer) && date.before(leao)) {signo = "Cancêr";}
+        else if (date.equals(leao) || date.after(leao) && date.before(virgem)) {signo = "Leão";}
+        else if (date.equals(virgem) || date.after(virgem) && date.before(libra)) {signo = "Virgem";}
+        else if (date.equals(libra) || date.after(libra) && date.before(escorpiao)) {signo = "Libra";}
+        else if (date.equals(escorpiao) || date.after(escorpiao) && date.before(sagitario)) {signo = "Escorpião";}
+        else if (date.equals(sagitario) || date.after(sagitario) && date.before(capricornio)) {signo = "Sagitário";}
+        else {signo = "Capricórnio";}
+        return signo;
+	}
+}

@@ -1,0 +1,123 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CamelCase {
+	
+	static List<String> strings = new ArrayList<String>(); 
+	
+	public static List<String> converterCamelCase(String original) {
+		separaPalavraComposta(original);
+		for (int i = 0; i < tamanhoDaLista(); i++) {
+			String palavraLower = convertePalavraLower(getStrings().get(i));
+			getStrings().set(i, palavraLower);		
+		}
+		System.out.println(strings);
+		return strings;
+	}
+	
+	public static int tamanhoDaLista() {
+		return strings.size();
+	}
+	
+	public static boolean caracterEMaisculo(char caractere) {
+		return Character.isUpperCase(caractere);		
+	}
+	
+	public static boolean caracterEMinisculo(char caractere) {
+		return Character.isLowerCase(caractere);		
+	}
+	
+	public static boolean caracterENumeral(char caractere) {
+		return Character.isDigit(caractere);		
+	}
+	
+	public static boolean caracterEEspecial(char caractere) {
+		if (!Character.isLetter(caractere) && !Character.isDigit(caractere) ) {
+			return true;
+		} else {
+			return false;
+		}		
+	}
+	
+	public static char converteCaracterParaMinusculo(char caractere) {
+		return Character.toLowerCase(caractere);		
+	}
+	
+	public static String convertePalavraLower(String entrada) {
+		String saida = "";
+		if(caracterEMaisculo(entrada.charAt(0)) && caracterEMaisculo(entrada.charAt(1))) {
+			saida = entrada;
+		} else {
+			for (int i = 0; i < entrada.length(); i++) {
+				saida += converteCaracterParaMinusculo(entrada.charAt(i));
+			}
+		}
+		return saida;
+	}	
+	
+	public static String converteCaracterUpper(String entrada,int i,String saida) {
+		char charCorrente = entrada.charAt(i);
+		char charPosterior = entrada.charAt(i+1);
+		char charAnterior = entrada.charAt(i-1);
+		if(caracterEMaisculo(entrada.charAt(i+1))) {
+			if(caracterEMinisculo(entrada.charAt(i-1))) {
+				saida = gravaSaidaEInicializaPalavra(saida,entrada.charAt(i));
+			} else {
+				saida += entrada.charAt(i);
+			}
+		} else {
+			saida = gravaSaidaEInicializaPalavra(saida,entrada.charAt(i));
+		}
+		return saida;
+	}
+	
+	public static String converteCaracterNumeral(String entrada,int i,String saida) {
+		char charCorrente = entrada.charAt(i);
+		char charAnterior = entrada.charAt(i-1);
+		if(caracterEMinisculo(charAnterior)) {
+			 saida = gravaSaidaEInicializaPalavra(saida,charCorrente);
+		}
+		else 
+			saida += charCorrente;
+		return saida;
+	}
+	
+	public static void separaPalavraComposta(String entrada) {
+		String saida = "";
+		validaEntradaOriginal(entrada);
+		for (int i = 0; i < entrada.length(); i++) {
+			char charCorrente = entrada.charAt(i);
+			if(i>0 && caracterEMaisculo(charCorrente) && i < entrada.length()-1) {
+				saida = converteCaracterUpper(entrada,i,saida);
+			}
+			else if(i>0 && caracterENumeral(charCorrente)) {
+				saida = converteCaracterNumeral(entrada,i,saida);
+			}
+			else
+				saida += charCorrente;	
+		}
+		strings.add(saida);
+	}
+	
+	public static List<String> getStrings() {
+		return strings;
+	}
+	
+	public static String gravaSaidaEInicializaPalavra(String saida, char charCorrente) {
+		strings.add(saida);
+		saida = "";
+		saida += charCorrente;
+		return saida;
+	}
+	
+	public static void validaEntradaOriginal(String entrada) {
+		if (caracterENumeral(entrada.charAt(0))) {
+			throw new InicioNumerosException("Não deve começar com números");
+		}
+		for (int i = 0; i < entrada.length(); i++) {
+			if(caracterEEspecial(entrada.charAt(i))) {
+				throw new CaractereEspecialException("Caracteres especiais não são permitidos, somente letras e números");
+			}
+		} 
+	}
+}

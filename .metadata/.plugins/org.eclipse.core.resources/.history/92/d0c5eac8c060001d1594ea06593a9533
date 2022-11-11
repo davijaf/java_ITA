@@ -1,0 +1,43 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class TestCamelCase {
+	
+	CamelCase c = new CamelCase();
+	
+	@Test
+	public void listaVazia() {
+		assertEquals(0,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarStringOriginal02() {
+		c.converterCamelCase("nome1");
+		assertEquals("nome",c.getStrings().get(1));
+		assertEquals(2,c.tamanhoDaLista());
+	}
+	
+	@Test
+	public void retornarStringConvertida03() {
+		c.converterCamelCase("Nome2");
+		assertEquals("nome",c.getStrings().get(3));
+		assertEquals(1,c.tamanhoDaLista());
+	}
+	
+	
+	@Test
+	public void retornarStringNomeComposto04() {
+		c.converterCamelCase("NomeComposto");
+		assertEquals("nome",c.getStrings().get(0));
+		assertEquals("composto",c.getStrings().get(0));
+		assertEquals(1,c.tamanhoDaLista());
+	}
+	
+
+	
+	
+	
+
+}

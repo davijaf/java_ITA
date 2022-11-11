@@ -1,0 +1,21 @@
+
+public class Embaralhador {
+
+String palavra = "palavra";
+
+	public Embaralhador(String palavra) {
+		super();
+		this.palavra = palavra;
+	    }
+	
+	public void embaralha1() {
+		char[] arrayPalavra = new char[palavra.length()];
+		
+		for (int i = 0; i < palavra.length(); i++) {
+			arrayPalavra[i] = palavra.charAt(i);
+		    }
+		for (char x : arrayPalavra) {
+		      System.out.println(x);
+		}
+	}
+}

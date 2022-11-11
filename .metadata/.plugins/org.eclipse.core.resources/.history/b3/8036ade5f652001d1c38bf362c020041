@@ -1,0 +1,17 @@
+import java.util.Collections;
+
+public class Embaralhador {
+
+String palavra = "palavra";
+private javax.swing.JTextField jTextFieldNumeros;
+
+	public Embaralhador(String palavra) {
+		super();
+		this.palavra = palavra;
+	    }
+	public void embaralha() {
+		jTextFieldNumeros = new javax.swing.JTextField();
+		String[] silabas = jTextFieldNumeros.getText().split(",");
+		Collections.shuffle(silabas);
+		}
+	}

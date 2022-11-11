@@ -1,0 +1,23 @@
+
+public class Pilha {
+
+	public boolean estaVazia() {
+		return true;
+	}
+
+	public int tamanho() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void empilha(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object topo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

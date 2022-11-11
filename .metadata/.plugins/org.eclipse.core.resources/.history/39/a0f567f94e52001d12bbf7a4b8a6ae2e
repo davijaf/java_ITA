@@ -1,0 +1,41 @@
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+class TestesIdadeSigno {
+	
+	@Test
+	void testIdade1() {
+		Pessoa pessoa=new Pessoa("17/12/1986");
+		assertEquals(pessoa.getIdade(), 35);
+		
+	}
+	@Test
+	void testSigno1() {
+		Pessoa pessoa=new Pessoa("17/12/1986");
+		assertTrue(pessoa.getSigno()=="Sagitario");
+
+	}
+	@Test
+	void testIdade2() {
+		Pessoa pessoa=new Pessoa("25/07/2020");
+		assertEquals(pessoa.getIdade(), 02);
+	}
+	
+	@Test
+	void testSigno2() {
+		Pessoa pessoa=new Pessoa("25/07/2020");
+		assertTrue(pessoa.getSigno()=="Leao");
+}
+	@Test
+	void testIdade3() {
+		Pessoa pessoa=new Pessoa("01/01/1996");
+		assertEquals(pessoa.getIdade(), 26);
+	}
+	
+	@Test
+	void testSigno3() {
+		Pessoa pessoa=new Pessoa("01/01/1996");
+		assertTrue(pessoa.getSigno()=="Capricornio");
+		
+	}
+}

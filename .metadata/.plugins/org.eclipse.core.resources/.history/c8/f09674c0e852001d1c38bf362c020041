@@ -1,0 +1,13 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class TestAutenticador {
+
+	@Test
+	public void loginComSucesso() throws LoginException {
+		Autenticador a = new Autenticador();
+		Usuario u = a.logar("davijose", "araujo");
+		assertEquals("davijose",u.getLogin());
+	}
+
+}

@@ -1,0 +1,14 @@
+
+public class Embaralhador {
+
+String palavra = "palavra";
+
+	public Embaralhador(String palavra) {
+		super();
+		this.palavra = palavra;
+	    }
+	
+	public void embaralha1() {
+		
+	}
+}

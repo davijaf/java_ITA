@@ -1,0 +1,13 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Embaralhador e1 = new Embaralhador("palavra");
+		e1.embaralha1();
+		Embaralhador e2 = new Embaralhador("palavras");
+		e2.embaralha2();
+		Embaralhador e3 = new Embaralhador("palavras");
+		e2.embaralha3();
+	}
+
+}

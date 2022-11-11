@@ -1,0 +1,13 @@
+import java.text.SimpleDateFormat;
+
+public class Date2 {
+
+	public static void main(String[] args){
+
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		String dataRecebida = "23/11/2015"; 
+    	Date dataDeNascimento = formato.parse(dataRecebida);
+    	System.out.println(dataDeNascimento); 
+    	//int teste = dataDeNascimento - System.currentTimeMillis()
+		}
+}

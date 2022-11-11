@@ -1,0 +1,191 @@
+import static org.junit.Assert.*;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+
+import org.junit.AfterClass;
+import org.junit.Test;
+
+public class testePizza {
+	
+	@AfterClass
+	public void limpaArrays() {
+		CarrinhoDeCompras.limpaPizzas();
+		Pizza.limpaIngredientes();
+		System.out.println("Limpo");
+		
+	}
+	
+	@Test
+	public void pizza0() {
+		CarrinhoDeCompras c0 = new CarrinhoDeCompras();
+		Pizza p0 = new Pizza();
+		p0.nomePizza = "Pizza Vazia";
+		c0.calculaValor(p0);
+		assertEquals(0,c0.getcalculaValor());
+		}
+
+	@Test
+	public void pizza1() {
+		CarrinhoDeCompras c1 = new CarrinhoDeCompras();
+		Pizza p1 = new Pizza();
+		Pizza.limpaIngredientes();
+		p1.adicionaIngrediente("Ingrediente01");
+		p1.nomePizza = "Pizza 1 ingrediente";
+		c1.calculaValor(p1);
+		assertEquals(15,c1.getcalculaValor());
+		
+		ArrayList<String> list1 = p1.getcontabilizaIngrediente();
+		ArrayList<String> list2 = new ArrayList<String>();
+		list2.add("Ingrediente01");
+		assertEquals(list1,list2);
+		}
+
+	@Test
+	public void pizza2() {
+		CarrinhoDeCompras c2 = new CarrinhoDeCompras();
+		Pizza p2 = new Pizza();
+		Pizza.limpaIngredientes();
+		p2.adicionaIngrediente("Ingrediente01");
+		p2.adicionaIngrediente("Ingrediente02");
+		p2.nomePizza = "Pizza 2 ingredientes";
+		c2.calculaValor(p2);
+		assertEquals(15,c2.getcalculaValor());
+		
+		ArrayList<String> list1 = p2.getcontabilizaIngrediente();
+		ArrayList<String> list2 = new ArrayList<String>();
+		list2.add("Ingrediente01");
+		list2.add("Ingrediente02");
+		assertEquals(list2,list1);
+		}
+	
+	@Test
+	public void pizza3() {
+		CarrinhoDeCompras c3 = new CarrinhoDeCompras();
+		Pizza p3 = new Pizza();
+		Pizza.limpaIngredientes();
+		p3.adicionaIngrediente("Ingrediente01");
+		p3.adicionaIngrediente("Ingrediente02");
+		p3.adicionaIngrediente("Ingrediente03");
+		p3.nomePizza = "Pizza 3 ingredientes";
+		c3.calculaValor(p3);
+		assertEquals(20,c3.getcalculaValor());
+		
+		ArrayList<String> list1 = p3.getcontabilizaIngrediente();
+		ArrayList<String> list2 = new ArrayList<String>();
+		list2.add("Ingrediente01");
+		list2.add("Ingrediente02");
+		list2.add("Ingrediente03");
+		System.out.println(list1);
+		System.out.println(list2);
+		assertEquals(list2,list1);
+		}
+	
+	@Test
+	public void pizza4() {
+		CarrinhoDeCompras.limpaPizzas();
+		Pizza.limpaIngredientes();
+		CarrinhoDeCompras c4 = new CarrinhoDeCompras();
+		Pizza p4 = new Pizza();
+		p4.adicionaIngrediente("Ingrediente01");
+		p4.adicionaIngrediente("Ingrediente02");
+		p4.adicionaIngrediente("Ingrediente03");
+		p4.adicionaIngrediente("Ingrediente04");
+		p4.nomePizza = "Pizza 4 ingredientes";
+		c4.calculaValor(p4);
+		assertEquals(20,c4.getcalculaValor());
+		
+		ArrayList<String> list1 = p4.getcontabilizaIngrediente();
+		ArrayList<String> list2 = new ArrayList<String>();
+		list2.add("Ingrediente01");
+		list2.add("Ingrediente02");
+		list2.add("Ingrediente03");
+		list2.add("Ingrediente04");
+		System.out.println(list1);
+		System.out.println(list2);
+		assertEquals(list2,list1);
+		}
+	
+	@Test
+	public void pizza5() {
+		CarrinhoDeCompras c5 = new CarrinhoDeCompras();
+		Pizza p5 = new Pizza();
+		p5.adicionaIngrediente("Ingrediente01");
+		p5.adicionaIngrediente("Ingrediente02");
+		p5.adicionaIngrediente("Ingrediente03");
+		p5.adicionaIngrediente("Ingrediente04");
+		p5.adicionaIngrediente("Ingrediente05");
+		p5.nomePizza = "Pizza 5 ingredientes";
+		c5.calculaValor(p5);
+		assertEquals(20,c5.getcalculaValor());
+		}
+	
+	@Test
+	public void pizza6() {
+		CarrinhoDeCompras c6 = new CarrinhoDeCompras();
+		Pizza p6 = new Pizza();
+		p6.adicionaIngrediente("Ingrediente01");
+		p6.adicionaIngrediente("Ingrediente02");
+		p6.adicionaIngrediente("Ingrediente03");
+		p6.adicionaIngrediente("Ingrediente04");
+		p6.adicionaIngrediente("Ingrediente05");
+		p6.adicionaIngrediente("Ingrediente06");
+		p6.nomePizza = "Pizza 6 ingredientes";
+		c6.calculaValor(p6);
+		assertEquals(23,c6.getcalculaValor());
+		}
+	
+	@Test
+	public void pizza7() {
+		CarrinhoDeCompras c7 = new CarrinhoDeCompras();
+		Pizza p7 = new Pizza();
+		p7.adicionaIngrediente("Ingrediente01");
+		p7.adicionaIngrediente("Ingrediente02");
+		p7.adicionaIngrediente("Ingrediente03");
+		p7.adicionaIngrediente("Ingrediente04");
+		p7.adicionaIngrediente("Ingrediente05");
+		p7.adicionaIngrediente("Ingrediente06");
+		p7.adicionaIngrediente("Ingrediente07");
+		p7.nomePizza = "Pizza 7 ingredientes";
+		c7.calculaValor(p7);
+		assertEquals(23,c7.getcalculaValor());
+		}
+	
+	@Test
+	public void pizzas() {
+		CarrinhoDeCompras c1 = new CarrinhoDeCompras();
+		
+		Pizza p0 = new Pizza();
+		p0.nomePizza = "Pizza Vazia";
+		c1.calculaValor(p0);
+		
+		Pizza p1 = new Pizza();
+		p1.nomePizza = "Pizza de Calabreza";
+		p1.adicionaIngrediente("Calabresa");
+		p1.adicionaIngrediente("Mussarela");
+		c1.calculaValor(p1);
+				
+		Pizza p2 = new Pizza();
+		p2.nomePizza = "Pizza da Casa";
+		p2.adicionaIngrediente("Frango");
+		p2.adicionaIngrediente("Mussarela");
+		p2.adicionaIngrediente("Bacon");
+		p2.adicionaIngrediente("Calabresa");
+		c1.calculaValor(p2);
+		
+		Pizza p3 = new Pizza();
+		p3.nomePizza = "Pizza 4 Queijos";
+		p3.adicionaIngrediente("Mussarela");
+		p3.adicionaIngrediente("Bacon");
+		p3.adicionaIngrediente("Parmesão");
+		p3.adicionaIngrediente("Gorgonzola");
+		p3.adicionaIngrediente("Provolone");
+		p3.adicionaIngrediente("Queijo Prato");
+		c1.calculaValor(p3);
+		
+		System.out.println(CarrinhoDeCompras.pizzas);
+		
+		assertEquals(58,c1.getcalculaValor());
+		}
+
+}

@@ -1,0 +1,10 @@
+
+public class Candidato implements Comparable<Candidato> {
+
+	@Override
+	public int compareTo(T o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

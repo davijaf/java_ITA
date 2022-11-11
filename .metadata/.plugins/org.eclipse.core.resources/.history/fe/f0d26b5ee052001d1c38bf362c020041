@@ -1,0 +1,17 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		a(100);
+		
+	}
+	
+	public static void a(int i) {
+		b(100);
+		System.out.println("executando a() com "+i)
+	}
+	
+	public static void b(int i) {
+		System.out.println("executando b() com "+i)
+	}
+}

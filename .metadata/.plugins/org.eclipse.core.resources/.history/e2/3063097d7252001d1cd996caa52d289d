@@ -1,0 +1,20 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Barulhento[] barulhentos = new Barulhento[10];
+		
+		barulhentos[0] = new Cachorro();
+		barulhentos[1] = new Cachorro();
+		barulhentos[2] = new Cachorro();
+		barulhentos[3] = new Cachorro();
+		barulhentos[4] = new Cachorro();
+		barulhentos[5] = new Cachorro();
+		barulhentos[6] = new Cachorro();
+		barulhentos[7] = new Cachorro();
+		barulhentos[8] = new Cachorro();
+		barulhentos[9] = new Cachorro();
+		
+	}
+
+}

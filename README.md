@@ -6,8 +6,9 @@ In this course, I designed even more complex programs with method and organizati
 
 Applied the principles of object orientation and understanding through the Java language and know how to apply these principles in practice when designed and objectively facilitate the software in an intuitive way.
 
-### The Java concepts introduced in this course include the following: basic object-oriented concepts,
+### The Java concepts introduced in this course include the following: 
 
+* Basic object-oriented concepts,
 * Methods such as classes,
 * Objects and attributes,
 * Instance and class variables;
